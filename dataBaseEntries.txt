@@ -1,0 +1,85 @@
+- INCASE YOU HAVE TO CLEAR DATABASE:
+	- COURSE ENTRIES:
+		courses = CS61b = Course(instructor = "Josh Hug", course_name= "CS61B")
+
+	- LECTURE ENTRIES (CS61B):
+lecture_list = [Lecture(lecture_topic = "Pre: An Outline of 61B", course_num = 1, lecture_date = datetime(2020, 1, 20), lecture_week = 1, lecture_film = 0),
+    Lecture(lecture_topic = "Intro, Hello World Java", course_num = 1, lecture_date = datetime(2020, 1, 22), lecture_week = 1, lecture_film = 0),
+    Lecture(lecture_topic = "Defining & Using Classes", course_num = 1, lecture_date = datetime(2020, 1, 24), lecture_week = 1, lecture_film = 0),
+    Lecture(lecture_topic = "References, Recursion, and Lists", course_num = 1, lecture_date = datetime(2020, 1, 27), lecture_week = 2, lecture_film = 0),
+    Lecture(lecture_topic = "SLLists, Nested Classes, Sential nodes", course_num = 1, lecture_date = datetime(2020, 1, 29), lecture_week = 2, lecture_film = 0),
+    Lecture(lecture_topic = "DLLists, Arrays", course_num = 1, lecture_date = datetime(2020, 1, 31), lecture_week = 2, lecture_film = 0),
+    Lecture(lecture_topic = "ALists, Resizing, vs. SLists", course_num = 1, lecture_date = datetime(2020, 2, 3), lecture_week = 3, lecture_film = 0),
+    Lecture(lecture_topic = "Testing", course_num = 1, lecture_date = datetime(2020, 2, 5), lecture_week = 3, lecture_film = 0),
+    Lecture(lecture_topic = "Inheritance, Implements", course_num = 1, lecture_date = datetime(2020, 2, 7), lecture_week = 3, lecture_film = 0)]
+
+
+   - ASSIGNMENTS (CS61B):
+
+
+
+assignments1 = [Assignment(assignment_week = 1, assignment_name = "HW 0: Basic Java Programs(optional)", exam_name = None),
+    Assignment(assignment_week = 2, assignment_name = "Project 0: NBody (due 2/1 @ 11:59PM)", exam_name = None),
+    Assignment(assignment_week = 3, assignment_name = "Project 1A: Data Structures (due 2/9 @ 11:59PM)", exam_name = None)]
+
+
+
+    Assignment(assignment_week = 4, assignment_name = "Project 1 Gold: Autograding (due 2/16 @ 11:59 PM)", exam_name = None),
+    Assignment(assignment_week = 4, assignment_name = "Project 1B: Testing and HoFs (due 2/16 @ 11:59 PM)", exam_name = None),
+    Assignment(assignment_week = 5, assignment_name = None, exam_name = "Midterm 1 (Date 2/20, 8-10PM) Material up to 2/15"),
+    Assignment(assignment_week = 5, assignment_name = "HW 1: Java Syntax and Sound Synthesis (due 2/27)", exam_name = None),
+    Assignment(assignment_week = 6, assignment_name = "HW 1: Java Syntax and Sound Synthesis (due 2/27)", exam_name = None),
+    Assignment(assignment_week = 6, assignment_name = "HW 1: Java Syntax and Sound Synthesis (due 2/27)", exam_name = None),
+
+
+
+
+    - DISCUSSION (CS61B):
+
+discussions1 = [Discussion(discussion_week = 1, discussion_name = "Intro to Java"),
+    Discussion(discussion_week = 2, discussion_name = "Scope, Pass-by-Value, Static"),
+    Discussion(discussion_week = 2, discussion_name = "Scope, Pass-by-Value, Static Exam Prep"),
+    Discussion(discussion_week = 3, discussion_name = "Linked Lists, Arrays"),
+    Discussion(discussion_week = 3,discussion_name = "Linked Lists, Arrays Exam Prep")]
+
+
+
+
+
+
+    - LAB (CS61B):
+
+labs1 = [Lab(lab_week= 1, lab_name = "Setting Up Your Computer"),
+    Lab(lab_week= 1, lab_name = "javac, java, git (due 2/1)"),
+    Lab(lab_week= 2, lab_name = "IntelliJ Home Setup"),
+    Lab(lab_week= 2, lab_name = "IDEs (due 2/1)"),
+    Lab(lab_week= 3, lab_name= "Testing, Debugging (due 2/8)")]
+
+	- SUBTOPIC ENTRIES(CS61B):
+subtopics = [Sub(subtopic = "(1a) Beach Party: 800 corgis", lecture_num = 1, lecture_video = "embed/RAbHpkPl1Ww", order_in_lecture = 1),
+    Sub(subtopic = "(1a) Corgi Videos Pt 2", lecture_num = 1, lecture_video = "embed/O-xAi7dIdV8", order_in_lecture = 2),Sub(subtopic = "(1a) Welcome to 61B", lecture_num = 2, lecture_video = "embed/h59h5DoNhL4", order_in_lecture = 1),
+	Sub(subtopic = "(1b) Course Logistics", lecture_num = 2, lecture_video = "embed/uaA1hLH3LjY", order_in_lecture = 2),Sub(subtopic = "(1) Compilation", lecture_num = 3, lecture_video = "embed/Y2vC_SW00TE", order_in_lecture = 1),
+	Sub(subtopic = "(2a) Defining & Instantiating Classes", lecture_num = 3, lecture_video = "embed/xDPUHRjsgA4", order_in_lecture = 2),
+	Sub(subtopic = "(2b) Defining & Instantiating Classes", lecture_num = 3, lecture_video = "embed/Hsor-iZ6-a4", order_in_lecture = 3),
+	Sub(subtopic = "(2c) Terminology", lecture_num = 3, lecture_video = "embed/ewMzZBy1RO4", order_in_lecture = 4),
+	Sub(subtopic = "(2d) Arrays Of Objects", lecture_num = 3, lecture_video = "embed/GgoszMH1ak8", order_in_lecture = 5),Sub(subtopic = "(3a) Static vs Instance Methods", lecture_num = 3, lecture_video = "embed/l8Q6NXbAwNk", order_in_lecture = 6),
+	Sub(subtopic = "(3b) Exercise", lecture_num = 3, lecture_video = "embed/8Gq-8mVbyFU", order_in_lecture = 7),
+	Sub(subtopic = "(3c) Exercise Solution", lecture_num = 3, lecture_video = "embed/Osuy8UEH03M", order_in_lecture = 8),
+	Sub(subtopic = "(4) Public Static Void Main", lecture_num = 3, lecture_video = "embed/1ViQUHlRoyM", order_in_lecture = 9),
+	Sub(subtopic = "(5) Using Libraries", lecture_num = 3, lecture_video = "embed/C6kbrsdNQaQ", order_in_lecture = 10)]
+
+
+	Sub(subtopic = "Primitive Types", lecture_num = 4, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "Reference Types", lecture_num = 4, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "Parameter Passing", lecture_num = 4, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "Instantiating Arrays", lecture_num = 4, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "IntLists", lecture_num = 4, lecture_video = "", order_in_lecture =),
+
+
+	Sub(subtopic = "SLLists", lecture_num = 5, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "Access Control & Nested Classes", lecture_num = 5, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "addLast & Size", lecture_num = 5, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "Caching", lecture_num = 5, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "The Empty List", lecture_num = 5, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "Sentinel Nodes", lecture_num = 5, lecture_video = "", order_in_lecture =),
+	Sub(subtopic = "Invariants", lecture_num = 5, lecture_video = "", order_in_lecture =)]

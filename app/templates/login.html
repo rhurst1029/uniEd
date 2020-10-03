@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block app_content %}
+<h1>Sign In</h1>
+
+<div class = "containter">
+  <h2>New User?</h2>
+  <button type="button">
+    <a href="{{ url_for('student_register') }}">Register As a Student!</a>
+  </button>
+  <button type="button">
+    <a href="{{ url_for('instructor_register') }}">Register As an Instructor!</a>
+  </button>
+
+</div>
+<p>
+
+</p>
+<form action="" method="post" novalidate>
+  {{ form.hidden_tag() }}
+  <p>
+    {{ form.username.label }}<br />
+    {{ form.username(size=32) }}<br />
+    {% for error in form.username.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>
+    {{ form.password.label }}<br />
+    {{ form.password(size=32) }}<br />
+    {% for error in form.password.errors %}
+    <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}
+  </p>
+  <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+  <p>{{ form.submit() }}</p>
+</form>
+
+{% endblock %}

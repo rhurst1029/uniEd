@@ -1,0 +1,27 @@
+[
+  {
+    "discussion_id": 1,
+    "discussion_name": "Intro to Java",
+    "discussion_week": 1
+  },
+  {
+    "discussion_id": 2,
+    "discussion_name": "Scope, Pass-by-Value, Static",
+    "discussion_week": 2
+  },
+  {
+    "discussion_id": 3,
+    "discussion_name": "Scope, Pass-by-Value, Static Exam Prep",
+    "discussion_week": 2
+  },
+  {
+    "discussion_id": 4,
+    "discussion_name": "Linked Lists, Arrays",
+    "discussion_week": 3
+  },
+  {
+    "discussion_id": 5,
+    "discussion_name": "Linked Lists, Arrays Exam Prep",
+    "discussion_week": 3
+  }
+]

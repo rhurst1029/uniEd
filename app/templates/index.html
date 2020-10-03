@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+{% if current_user.instructor == True %}
+<h1> Hello, {{current_user.username}}! Lets Help Some People Learn Today!</h1>
+{% set course = instCourse %}
+
+
+{%else%}
+<div class="page-header">
+    <h4>Instructor: {{instCourse.instructor}} </h4>
+    <h7>Lecture: MWF 3-4 PM, Wheeler 150</h7>
+</div>
+
+<div class="container">
+    <div class="header">
+        <h4>Announcements [View All] </h4>
+    </div>
+    <div class="col-sm-8">
+        <div class="overflow-auto" style="border:1px solid #ccc;overflow:auto;">
+            <div class="header" style="text-align: center; ">
+                <b><h3>Pre-Semester Survey</h3></b>
+            </div>
+
+            <p>The pre-semester survey is now available, sorry it’s a day late.
+                Fill it out at <a
+                        href="https://goo.gl/forms/v2aZJLLZwA52lcQJ2.">https://goo.gl/forms/v2aZJLLZwA52lcQJ2.</a>
+                This will add 8 extra credit points to your total score (see about page on the website for more about
+                points in the course).</p>
+            <p>We’ll accept responses until roughly the first midterm,
+                but an earlier response is welcome so we can reach those of you have specific requests or needs.</p>
+            <p>The first lecture will be in 7 PM on 1/23 in Zellerbach Auditorium.
+                There will be no lecture in Wheeler at 3 PM on 1/23. Lectures will move to Wheeler starting on 1/25.</p>
+            <p>Also to clarify pacing points: To be eligible for pacing points for a given lecture, you should either
+                attend or watch by the end of the same day as the live lecture.
+                It doesn’t have to be at the exact same time. Watching on a previous day is OK as well.</p>
+
+        </div>
+    </div>
+    <div class="col-sm-4" style="border:1px solid #ccc">
+        <table class="table">
+            <thead class="thead-dark">
+            <th scope="col" colspan="1">This Week in CS61B!</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td><b>[Week:{{lastLec.lecture_week}}]</b></td>
+            </tr>
+            {% for lecture in lectures %}
+            <tr>
+                <td>
+                    <b>{{lecture.lecture_date.strftime("%m/%d ")}}</b>
+                    <a href="{{url_for('lecture_page',  course_id = courses[0].course_id, lecture_id = lecture.lecture_id, subtopic_id = lecture.subtopics.first().id) }} ">
+                        {{lecture.lecture_topic}}</a>
+
+                </td>
+            </tr>
+            {% endfor %}
+            {% if current_user.current_date == lastLec.lecture_date %}
+            <th scope="col" colspan="1">
+                <b>Today's lecture:</b>
+                <a href="{{url_for('lecture_page',  course_id = courses[0].course_id,
+                lecture_id = lastLec.lecture_id, subtopic_id = lastLec.subtopics.first().id) }} ">
+                    {{lastLec.lecture_topic}}</a>
+                <tr>
+                    <td><b style="font-size: 10px;">Progress: {{lastLec.lecture_topic}}</b>
+                        <a href="{{url_for('lecture_page',  course_id = courses[0].course_id, lecture_id = lastLec.lecture_id, subtopic_id = lastLec.subtopics.first().id) }} ">
+                            <img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png"
+                                 height="42"
+                                 width="180">
+                        </a></td>
+                </tr>
+            </th>
+            {% endif %}
+
+            <tr>
+                <td>
+                    <b>This Week's Lab(s):</b>
+                        {% for lab in labs %}
+                       <p> ({{ loop.index }}) {{ lab.lab_name }}</p>
+                        {%endfor %}
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b>This Week's Discussion(s):</b>
+                        {% for discussion in discussions %}
+                       <p> ({{ loop.index }}) {{ discussion.discussion_name }}</p>
+                        {%endfor %}
+
+                </td>
+            </tr>
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+</div>
+
+<div class="container-fluid">
+    <div class="page-header">
+        <h3> OH & Discussion Calendar:</h3>
+    </div>
+    <div class="col-lg-9" style="border:1px solid #ccc">
+        <iframe src="https://calendar.google.com/calendar/embed?src=berkeley.edu_fm2unm7i2hf2fhlnuukttd6c44%40group.calendar.google.com&ctz=America%2FLos_Angeles"
+                style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

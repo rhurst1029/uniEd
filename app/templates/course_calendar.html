@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<div class="page-header:" style = " text-align: center; margin-top: -18px;margin-bottom: 10px;">
+    <h1>
+        {{course.course_name}} | Data Structures
+    </h1>
+
+</div>
+
+
+<div class="container-fluid"  >
+    <div class="row">
+        <div class="col-sm-8" style="border:2px solid #ccc" >
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col" style = "text-align:center">Week</th>
+                    <th scope="col" style = "text-align:center">Date</th>
+                    <th scope="col" style = "text-align:center"> Lecture</th>
+                    <th scope="col" style = "text-align:center"> Discussion</th>
+                    <th scope="col" style = "text-align:center"> Lab</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% if current_user.instructor == True %}
+
+                {% for week in range(15) %}
+                {% set ns = namespace(items=0) %}
+                {% for lecture in lectures %}
+                {% if lecture.lecture_week == week %}
+                {% if ns.items == 0 %}
+                <tr >
+                    <th scope="row" rowspan="3"> {{lecture.lecture_week}}</th>
+                    <td> {{lecture.lecture_date.strftime("%m/%d ")}}</td>
+
+                    <td>
+                        {% if current_user.current_date > lecture.lecture_date %}
+                        <a href="{{url_for('post_lecture_page',  course_id = course.course_id, lecture_id = lecture.lecture_id) }} ">{{lecture.lecture_topic}}</a>
+                        {%elif current_user.current_date < lecture.lecture_date %}
+                        <a href="{{url_for('pre_lecture_page',  course_id = course.course_id, lecture_id = lecture.lecture_id) }} ">{{lecture.lecture_topic}}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td> {{lecture.lecture_date.strftime("%m/%d ")}}</td>
+                    <td>
+                        {% if current_user.current_date > lecture.lecture_date %}
+                        <a href="{{url_for('post_lecture_page',  course_id = course.course_id, lecture_id = lecture.lecture_id) }} ">{{lecture.lecture_topic}}</a>
+                        {%elif current_user.current_date < lecture.lecture_date %}
+                        <a href="{{url_for('pre_lecture_page',  course_id = course.course_id, lecture_id = lecture.lecture_id) }} ">{{lecture.lecture_topic}}</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endif %}
+                {% set ns.items = ns.items + 1 %}
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+
+
+                {% else %}
+                {% for week in range(15) %}
+                {% set ns = namespace(items=0) %}
+                {% for lecture in lectures %}
+
+                {% if lecture.lecture_week == week %}
+                {% if ns.items == 0 %}
+
+                <tr>
+                    <th scope="row" rowspan="3" style = "text-align:center; border-left:1px solid #ccc;"> {{lecture.lecture_week}}</th>
+                    <td> {{lecture.lecture_date.strftime("%m/%d ")}}</td>
+
+                    <td style = "text-align:center">
+
+                        <a href="{{url_for('lecture_page',  course_id = course.course_id, lecture_id = lecture.lecture_id,
+                         subtopic_id = lectures[lecture].id) }} ">{{lecture.lecture_topic}}
+                        </a>
+
+                    </td>
+                    <th scope="row" rowspan="3" style="font-weight: normal; text-align:center;  border-left:1px solid #ccc;"> (1) {{ disc_arr[week][0].discussion_name
+                        }}
+                        {% if disc_arr[week][1] %}
+                        <br/>
+                        (2) {{ disc_arr[week][1].discussion_name }}
+                        {%else %}
+                    </th>
+                    {%endif %}
+
+
+                    <th scope="row" rowspan="3" style="font-weight: normal;text-align:center; border-left:1px solid #ccc;" >(1) {{ lab_arr[week][0].lab_name }}
+                        {% if lab_arr[week][1] %}
+                        <br/>
+                        (2) {{lab_arr[week][1].lab_name}}
+
+                </tr>
+                {% endif %}
+
+                {% else %}
+
+
+                <tr>
+
+                    <td >
+                        {{lecture.lecture_date.strftime("%m/%d ")}}
+                    </td>
+                    <td style = "text-align:center">
+                        <a href="{{url_for('lecture_page',  course_id = course.course_id,
+                        lecture_id = lecture.lecture_id, subtopic_id = lectures[lecture].id) }} ">{{lecture.lecture_topic}}</a>
+                    </td>
+
+
+                </tr>
+
+                {% endif %}
+
+                {% set ns.items = ns.items + 1 %}
+                {% endif %}
+
+                {% endfor %}
+
+                {% endfor %}
+
+                {%endif%}
+
+
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="col-sm-4" style="border:.5px solid #ccc">
+
+            <div class="row"  style="text-align:center">
+                <b>
+                    <h4 >
+                        Student Profile
+                    </h4>
+                </b>
+            </div>
+            <div class="row" style = "padding-top: 30px; padding-left: 10px;">
+
+                <b>
+                    Attendance:
+                </b>
+                <a>
+                    <img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png"
+                         height="42"
+                         width="80">
+                </a>
+            </div>
+
+
+            <div class="row" style = "padding-top: 30px; padding-left: 10px;">
+                <b>
+                    Course Progress:
+                </b>
+                <img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png"
+                     height="42"
+                     width="80">
+
+            </div>
+            <b/>
+            <div class="row" style = "padding-top: 30px;padding-bottom: 30px;padding-left: 10px;">
+                <b>
+                    Total Points:
+                </b>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

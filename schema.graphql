@@ -1,0 +1,40 @@
+Lecture {
+  discussion_id: ID!
+  discussion_name: String!
+  discussion_week: Int!
+}
+
+Lab {
+  lab_id: ID!
+  lab_name: String!
+  lab_week: Int
+}
+
+Lecture {
+  lecture_date: String!
+  lecture_film: Int
+  lecture_id: ID!
+  lecture_topic: String
+  lecture_week: Int
+  subtopics: Boolean
+}
+
+QuizQuestion {
+  choice1: String
+  choice2: String
+  choice3: String
+  choice4: String
+  id: Int
+  question: String
+  sub_id: Int
+}
+
+User {
+  id: Int
+  lecture_num: Int
+  lecture_video: String
+  questions: Boolean
+  quiz_questions: Boolean
+  subtopic: String
+}
+

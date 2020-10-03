@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block app_content %}
+<p>This is the pre_lecture page!</p>
+<div class="page-header">
+    <h1>
+        Topic: {{lecture.lecture_topic}}
+    </h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <img src="https://image.shutterstock.com/image-vector/classic-black-white-video-player-260nw-1204633063.jpg" height="180"
+                         width="340">
+        </div>
+
+
+    </div>
+</div>
+
+
+
+{% include '_subtopicPulldown.html' %}
+{% endblock %}

@@ -1,0 +1,83 @@
+[
+  {
+    "choice1": "(1) javac FileName.java (2) java FileName",
+    "choice2": "(1) java FileName (2) javac FileName.java",
+    "choice3": "(1) java FileName.java (2) javac FileName",
+    "choice4": "Pound your fists on the keyboard & hope for the best",
+    "id": 1,
+    "question": "What are the two commands to (1) compile a java file & (2) run the compiled file?",
+    "sub_id": 6
+  },
+  {
+    "choice1": "public static Main Dog",
+    "choice2": "public void Dog",
+    "choice3": "public class dog",
+    "choice4": "Buy a dog whistle and use it in a dog park",
+    "id": 2,
+    "question": "How would you define a 'Dog' class in java?",
+    "sub_id": 7
+  },
+  {
+    "choice1": "Below the class deceleration",
+    "choice2": "Below the main method",
+    "choice3": "In the constructor",
+    "choice4": "Outside of the class decleration",
+    "id": 3,
+    "question": "Where do you declare Instance variables in a class?",
+    "sub_id": 8
+  },
+  {
+    "choice1": "Defines the actions of a class",
+    "choice2": "Provides another method for the class",
+    "choice3": "Serves to be be invoked by an instance of the class",
+    "choice4": "Determines how to instanciate the class",
+    "id": 4,
+    "question": "What does the constructor do?",
+    "sub_id": 9
+  },
+  {
+    "choice1": "Below the class deceleration",
+    "choice2": "Below the main method",
+    "choice3": "In the constructor",
+    "choice4": "Outside of the class decleration",
+    "id": 5,
+    "question": "Where do you declare variables in a class?",
+    "sub_id": 10
+  },
+  {
+    "choice1": "Below the class deceleration",
+    "choice2": "Below the main method",
+    "choice3": "In the constructor",
+    "choice4": "Outside of the class decleration",
+    "id": 6,
+    "question": "Where do you declare variables in a class?",
+    "sub_id": 11
+  },
+  {
+    "choice1": "Below the class deceleration",
+    "choice2": "Below the main method",
+    "choice3": "In the constructor",
+    "choice4": "Outside of the class decleration",
+    "id": 7,
+    "question": "Where do you declare variables in a class?",
+    "sub_id": 12
+  },
+  {
+    "choice1": "Below the class deceleration",
+    "choice2": "Below the main method",
+    "choice3": "In the constructor",
+    "choice4": "Outside of the class decleration",
+    "id": 8,
+    "question": "Where do you declare variables in a class?",
+    "sub_id": 13
+  },
+  {
+    "choice1": "Below the class deceleration",
+    "choice2": "Below the main method",
+    "choice3": "In the constructor",
+    "choice4": "Outside of the class deceleration",
+    "id": 9,
+    "question": "Where do you declare variables in a class?",
+    "sub_id": 14
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "discussion_id": 1,
+    "discussion_name": "Intro to Java",
+    "discussion_week": 1
+  },
+  {
+    "lab_id": 1,
+    "lab_name": "Setting Up Your Computer",
+    "lab_week": 1
+  },
+  {
+    "lecture_date": "Mon, 20 Jan 2020 00:00:00 GMT",
+    "lecture_film": 0,
+    "lecture_id": 1,
+    "lecture_topic": "Pre: An Outline of 61B",
+    "lecture_week": 1,
+    "subtopics": true
+  },
+  {
+    "choice1": "(1) javac FileName.java (2) java FileName",
+    "choice2": "(1) java FileName (2) javac FileName.java",
+    "choice3": "(1) java FileName.java (2) javac FileName",
+    "choice4": "Pound your fists on the keyboard & hope for the best",
+    "id": 1,
+    "question": "What are the two commands to (1) compile a java file & (2) run the compiled file?",
+    "sub_id": 6
+  },
+  {
+    "id": 1,
+    "lecture_num": 1,
+    "lecture_video": "embed/RAbHpkPl1Ww",
+    "questions": false,
+    "quiz_questions": false,
+    "subtopic": "(1a) Beach Party: 800 corgis"
+  }
+]

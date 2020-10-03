@@ -1,0 +1,17 @@
+{% block content %}
+
+        <form class="form-signin"  role="form">
+
+
+        <input id="q" class="form-control" placeholder="Type your question here" required autofocus>
+
+      
+        <button class="btn btn btn-primary btn-block" type="button"
+                onclick="javascript:questionAdd('#q', '{{current_user.id}}', '{{subtopic_id}}')">Submit</button>
+
+
+		</form>   
+
+<!--            Button: onClick: fires up javascript and run 'questionAdd with the parameters, #q passes in input object with its attributes and values
+function is inherited from base.html-->
+{% endblock %}

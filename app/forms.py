@@ -1,0 +1,60 @@
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, InputRequired
+from app.models import User
+from wtforms import StringField, TextAreaField, SubmitField
+from wtforms.validators import DataRequired, Length
+
+
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember_me = BooleanField('Remember Me')
+    submit = SubmitField('Sign In')
+
+
+class RegistrationForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    password2 = PasswordField(
+        'Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Register')
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different username.')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different email address.')
+
+
+class EditProfileForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    about_me = TextAreaField('About me', validators=[Length(min=0, max=140)])
+    submit = SubmitField('Submit')
+
+
+class QuestionForm(FlaskForm):
+    question = TextAreaField('Question', validators=[DataRequired()])
+    submit = SubmitField("Submit")
+
+class NextSubtopic(FlaskForm):
+    submit = SubmitField("humor")
+
+class FinishQuiz(FlaskForm):
+    submit = SubmitField("humor")
+
+class QuizForm(FlaskForm):
+  q1 = RadioField(validators=[InputRequired()])
+  q2 = RadioField(validators=[InputRequired()])
+  q3 = RadioField(validators=[InputRequired()])
+  q4 = RadioField(validators=[InputRequired()])
+
+  cancel = SubmitField("Cancel")

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+
+{% block app_content %}
+<p>This is the post_lecture page!</p>
+<div class="page-header">
+    <h1>
+        {{lecture.lecture_topic}}
+    </h1>
+    <h4> Lecture Date: {{lecture.lecture_date.strftime("%m/%d/%Y ")}}</h4>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="row">
+                <h2>Topic Comprehension</h2>
+                {% for sub in lecture.subtopics %}
+                {% if loop.index < 5 %}
+
+
+                <div class="col-sm-3">
+                    <b>
+                    {{sub.subtopic}}
+                        </b>
+
+                    <a><img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png" height="42"
+                         width="80"></a>
+                </div>
+
+
+                {%elif loop.index == 5%}
+            </div>
+            <div class = "row">
+                <p>     </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <b>
+                    {{sub.subtopic}}
+                        </b>
+                    <a><img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png" height="42"
+                         width="80"></a>
+                </div>
+                {% else %}
+                <div class="col-sm-3">
+                    <b>
+                    {{sub.subtopic}}
+                        </b>
+                    <a><img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png" height="42"
+                         width="80"></a>
+                </div>
+
+
+                {%endif%}
+                {%endfor%}
+            </div>
+        </div>
+
+
+        <div class="col-sm-3">
+            <table>
+                <tr>
+                    <td><img
+                            src="https://image.shutterstock.com/image-vector/classic-black-white-video-player-260nw-1204633063.jpg"
+                            height="150"
+                            width="200"></td>
+                </tr>
+                <tr>
+                    <b>
+                        <p>Edit Video</p>
+                    </b>
+                </tr>
+            </table>
+
+            <div class="row">
+                <div class='pull-right'>
+                    <h3> Student Assesment</h3>
+                    <h6> Attendance:</h6>
+                    <img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png" height="42"
+                         width="80">
+                    <h6> Engagement:</h6>
+                    <img src="https://catswhocode.com/wp-content/uploads/2010/10/pure-css-progress-bar.png" height="42"
+                         width="80">
+                </div>
+                <div class='pull-right'>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        </table>
+    </div>
+</div>
+
+<div class = "container">
+    <div class = "page-header">
+        <h2>Student Groupings By GSI</h2>
+    </div>
+    <div class = "row">
+        <div class = "col-sm-3">
+            <h6> GSI #1</h6>
+        </div>
+        <div class = "col-sm-3">
+            <h6> GSI #2</h6>
+        </div><div class = "col-sm-3">
+            <h6> GSI #3</h6>
+        </div>
+        <div class = "col-sm-3">
+            <h6> GSI #4</h6>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

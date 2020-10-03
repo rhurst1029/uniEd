@@ -1,0 +1,69 @@
+
+
+
+<div class="container" style="position: relative;">
+    <div class="row">
+        <div class="col-sm-4">
+
+            <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    SubTopics<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+
+                    {% for sub in subtopics %}
+                    <li>
+                        <a href="{{url_for('lecture_page', course_id = 1,
+                        lecture_id = sub.lecture_num, subtopic_id = sub.id)}}">
+                            {{sub.subtopic}}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <b/>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    Recourses<span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">
+                            Visual
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Interactive
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Guide
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Reading
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Slides
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
